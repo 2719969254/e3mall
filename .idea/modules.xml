@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/e3.iml" filepath="$PROJECT_DIR$/.idea/e3.iml" />
       <module fileurl="file://$PROJECT_DIR$/e3-common/e3-common.iml" filepath="$PROJECT_DIR$/e3-common/e3-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager.iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-dao/e3-manager-dao.iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-dao/e3-manager-dao.iml" />
