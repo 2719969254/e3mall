@@ -12,13 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 /**
- * 商品管理Service
- * <p>Title: ItemServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p>
- *
- * @version 1.0
+ * @author 田祚
  */
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -29,7 +25,6 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public TbItem getItemById(long itemId) {
         //根据主键查询
-        //TbItem tbItem = itemMapper.selectByPrimaryKey(itemId);
         TbItemExample example = new TbItemExample();
         TbItemExample.Criteria criteria = example.createCriteria();
         //设置查询条件

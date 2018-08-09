@@ -2,6 +2,9 @@ package cn.e3mall.pojo;
 
 import java.io.Serializable;
 
+/**
+ * @author 田祚
+ */
 public class EasyUITreeNode implements Serializable {
     private Long id;
     private String text;

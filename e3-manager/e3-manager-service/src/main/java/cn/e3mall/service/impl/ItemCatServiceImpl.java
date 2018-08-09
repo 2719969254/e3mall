@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author 田祚
+ */
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
     @Autowired
@@ -18,7 +21,7 @@ public class ItemCatServiceImpl implements ItemCatService {
     private TbItemCatMapper itemCatMapper;
 
     @Override
-    public List<EasyUITreeNode> getItemCatlist(Long parentId) {
+    public List<EasyUITreeNode> getItemCatList(Long parentId) {
         //根据父节点查询子节点列表
         TbItemCatExample tbItemCatExample = new TbItemCatExample();
         TbItemCatExample.Criteria criteria = tbItemCatExample.createCriteria();

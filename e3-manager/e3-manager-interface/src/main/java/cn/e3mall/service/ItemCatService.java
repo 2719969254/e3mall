@@ -4,6 +4,15 @@ import cn.e3mall.pojo.EasyUITreeNode;
 
 import java.util.List;
 
+/**
+ * @author 田祚
+ */
 public interface ItemCatService {
-    List<EasyUITreeNode> getItemCatlist(Long parentId);
+    /**
+     * 显示所有分类
+     *
+     * @param parentId
+     * @return
+     */
+    List<EasyUITreeNode> getItemCatList(Long parentId);
 }
