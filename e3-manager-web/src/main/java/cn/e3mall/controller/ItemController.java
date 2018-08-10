@@ -2,6 +2,7 @@ package cn.e3mall.controller;
 
 import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbItem;
+import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.service.ItemService;
 import cn.e3mall.utils.E3Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 /**
- *  商品controller
+ * 商品controller
+ *
  * @author MR.Tian
  */
 @Controller
@@ -23,6 +25,7 @@ public class ItemController {
 
     /**
      * 根据id查询商品信息
+     *
      * @param itemId 商品id
      * @return TbItem
      */
@@ -34,8 +37,9 @@ public class ItemController {
 
     /**
      * 分页显示商品信息
+     *
      * @param page 页数
-     * @param rows  显示行数
+     * @param rows 显示行数
      * @return EasyUIDataGridResult
      */
     @RequestMapping("/item/list")
@@ -47,13 +51,68 @@ public class ItemController {
 
     /**
      * 添加商品
+     *
      * @param tbItem 商品表
-     * @param desc 商品描述表
+     * @param desc   商品描述表
      * @return E3Result
      */
-    @RequestMapping(value="/item/save",method= RequestMethod.POST)
+    @RequestMapping(value = "/item/save", method = RequestMethod.POST)
     @ResponseBody
-    public E3Result addItem(TbItem tbItem,String desc){
+    public E3Result addItem(TbItem tbItem, String desc) {
         return itemService.addItem(tbItem, desc);
+    }
+
+    /**
+     * 异步重新加载商品描述
+     *
+     * @param id 商品id
+     * @return TbItemDesc
+     */
+    @RequestMapping("/rest/item/query/item/desc/{id}")
+    @ResponseBody
+    public TbItemDesc selectTbItemDesc(@PathVariable long id) {
+        return itemService.getItemDescById(id);
+    }
+
+    /**
+     * 异步重新加载商品信息
+     *
+     * @param id 商品id
+     * @return TbItem
+     */
+    @RequestMapping("/rest/item/param/item/query/{id}")
+    @ResponseBody
+    public TbItem queryById(@PathVariable long id) {
+        return itemService.getItemById(id);
+    }
+    /**
+     * 批量删除
+     * @param ids 商品编号
+     * @return E3Result
+     */
+    @RequestMapping("/rest/item/delete")
+    @ResponseBody
+    public E3Result delete(String ids){
+        return itemService.deleteItems(ids);
+    }
+    /**
+     * 批量下架商品
+     * @param ids 商品编号
+     * @return E3Result
+     */
+    @RequestMapping("/rest/item/instock")
+    @ResponseBody
+    public E3Result soldOutItem(String ids){
+        return itemService.soldOutItem(ids);
+    }
+    /**
+     * 批量上架商品
+     * @param ids 商品编号
+     * @return E3Result
+     */
+    @RequestMapping("/rest/item/reshelf")
+    @ResponseBody
+    public E3Result groundingItem(String ids){
+        return itemService.groundingItem(ids);
     }
 }

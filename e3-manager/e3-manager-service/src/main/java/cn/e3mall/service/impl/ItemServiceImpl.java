@@ -11,6 +11,7 @@ import cn.e3mall.utils.E3Result;
 import cn.e3mall.utils.IDUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class ItemServiceImpl implements ItemService {
     private TbItemMapper itemMapper;
     @Autowired
     private TbItemDescMapper itemDescMapper;
+
     @Override
     public TbItem getItemById(long itemId) {
         //根据主键查询
@@ -84,4 +86,59 @@ public class ItemServiceImpl implements ItemService {
         itemDescMapper.insert(itemDesc);
         return E3Result.ok();
     }
+
+    @Override
+    public TbItemDesc getItemDescById(long id) {
+        return itemDescMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public E3Result deleteItems(String ids) {
+        //判断ids不为空
+        if (StringUtils.isNoneBlank(ids)) {
+            //分割ids
+            String[] split = ids.split(",");
+            for (String id : split) {
+                itemMapper.deleteByPrimaryKey(Long.valueOf(id));
+                itemDescMapper.deleteByPrimaryKey(Long.valueOf(id));
+            }
+            return E3Result.ok();
+        }
+        return null;
+    }
+
+    @Override
+    public E3Result groundingItem(String ids) {
+        //判断ids不为空
+        if(StringUtils.isNoneBlank(ids)){
+            String[] split = ids.split(",");
+            //遍历成一个个的id进行修改下架
+            for ( String id : split ) {
+                TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
+                item.setStatus((byte) 1);
+                //保存
+                itemMapper.updateByPrimaryKey(item);
+            }
+            return E3Result.ok();
+        }
+        return null;
+    }
+
+    @Override
+    public E3Result soldOutItem(String ids) {
+        //判断ids不为空
+        if(StringUtils.isNoneBlank(ids)){
+            String[] split = ids.split(",");
+            //遍历成一个个的id进行修改下架
+            for ( String id : split ) {
+                TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
+                item.setStatus((byte) 2);
+                //保存
+                itemMapper.updateByPrimaryKey(item);
+            }
+            return E3Result.ok();
+        }
+        return null;
+    }
+
 }

@@ -61,10 +61,10 @@
         			
         			// 加载商品描述
         			$.getJSON('/rest/item/query/item/desc/'+data.id,function(_data){
-        				if(_data.status == 200){
+        				 //if(_data.status == 200){
         					//UM.getEditor('itemeEditDescEditor').setContent(_data.data.itemDesc, false);
-        					itemEditEditor.html(_data.data.itemDesc);
-        				}
+                            itemEditEditor.html(_data.itemDesc);
+        				// }
         			});
         			
         			//加载商品规格
@@ -122,6 +122,9 @@
             				$.messager.alert('提示','删除商品成功!',undefined,function(){
             					$("#itemList").datagrid("reload");
             				});
+                            setTimeout( function(){
+                            }, 5 * 1000 );//延迟5000毫米
+                            window.location.href = "http://localhost:8081/";
             			}
             		});
         	    }
