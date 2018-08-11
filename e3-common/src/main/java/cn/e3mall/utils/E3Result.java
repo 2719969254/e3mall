@@ -148,4 +148,12 @@ public class E3Result implements Serializable{
         }
     }
 
+    @Override
+    public String toString() {
+        return "E3Result{" +
+                "status=" + status +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }
