@@ -123,8 +123,9 @@
             					$("#itemList").datagrid("reload");
             				});
                             setTimeout( function(){
+                                window.location.href = "http://localhost:8081/";
                             }, 5 * 1000 );//延迟5000毫米
-                            window.location.href = "http://localhost:8081/";
+
             			}
             		});
         	    }

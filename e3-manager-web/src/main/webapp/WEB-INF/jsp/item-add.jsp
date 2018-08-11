@@ -122,7 +122,10 @@
         $.post("/item/save", $("#itemAddForm").serialize(), function (data) {
             if (data.status == 200) {
                 $.messager.alert('提示', '新增商品成功!');
-                window.location.href = "http://localhost:8081/";
+                setTimeout( function(){
+                    window.location.href = "http://localhost:8081/";
+                }, 5 * 1000 );//延迟5000毫米
+
             }
         });
     }
