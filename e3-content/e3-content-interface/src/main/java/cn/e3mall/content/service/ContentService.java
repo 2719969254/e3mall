@@ -4,12 +4,14 @@ import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbContent;
 import cn.e3mall.utils.E3Result;
 
+import java.util.List;
+
 /**
  * @program: e3
  * @description: 内容管理接口
- * @author:Mr.Tian
+ * @author: Mr.Tian
  * @Company: www.stxkfzx.com
- * @Time: 2018/8/11    11:24
+ * @Time: 2018/8/11
  */
 public interface ContentService {
 	/**
@@ -44,4 +46,10 @@ public interface ContentService {
 	 * @return TbContent
 	 */
 	TbContent selectByIdContent(Long id);
+	/**
+	 * 根据内容分类id查询内容列表
+	 * @param cid 分类id
+	 * @return List<TbContent>
+	 */
+	List<TbContent> getContentListByCid(Long cid);
 }

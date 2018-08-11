@@ -1,14 +1,17 @@
 package cn.e3mall.utils;
 
-import java.util.List;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.List;
+
 /**
- * 淘淘商城自定义响应结构
+ * @program: e3
+ * @description: 淘淘商城自定义响应结构
+ * @author: Mr.Tian
+ * @Company: www.stxkfzx.com
+ * @Date: 2018/8/9
  */
 public class JsonUtils {
 
@@ -20,7 +23,7 @@ public class JsonUtils {
      * <p>Title: pojoToJson</p>
      * <p>Description: </p>
      * @param data
-     * @return
+     * @return String
      */
     public static String objectToJson(Object data) {
     	try {
@@ -36,8 +39,8 @@ public class JsonUtils {
      * 将json结果集转化为对象
      * 
      * @param jsonData json数据
-     * @param clazz 对象中的object类型
-     * @return
+     * @param beanType 对象中的object类型
+     * @return null
      */
     public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
         try {

@@ -6,7 +6,11 @@ import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.utils.E3Result;
 
 /**
- * @author 田祚
+ * @program: e3
+ * @description: 商品Service
+ * @author: Mr.Tian
+ * @Company: www.stxkfzx.com
+ * @Time: 2018/8/9
  */
 public interface ItemService {
     /**

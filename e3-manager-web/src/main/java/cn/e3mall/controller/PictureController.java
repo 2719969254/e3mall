@@ -15,9 +15,8 @@ import java.util.Map;
 /**
  * @program: e3
  * @description: 图片上传Controller
- * @author:Mr.Tian
+ * @author: Mr.Tian
  * @Date: 2018/8/10
- * @Time: 10:16
  */
 @Controller
 public class PictureController {
@@ -39,13 +38,13 @@ public class PictureController {
             //补充为完整的url
             url = IMAGE_SERVER_URL + url;
             //封装到map中返回
-            Map result = new HashMap<>();
+            Map<String,Object> result = new HashMap<>(1000);
             result.put("error", 0);
             result.put("url", url);
             return JsonUtils.objectToJson(result);
         } catch (Exception e) {
             e.printStackTrace();
-            Map result = new HashMap<>();
+            Map<String ,Object> result = new HashMap<>(1000);
             result.put("error", 1);
             result.put("message", "图片上传失败");
             return JsonUtils.objectToJson(result);

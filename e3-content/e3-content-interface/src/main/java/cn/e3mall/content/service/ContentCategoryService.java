@@ -10,7 +10,7 @@ import java.util.List;
  * @description: 内容分类管理
  * @author:Mr.Tian
  * @Company： www.stxkfzx.com
- * @Time: 2018/8/1020:04
+ * @Time: 2018/8/10
  */
 public interface ContentCategoryService {
 	/**

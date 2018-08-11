@@ -3,9 +3,14 @@ package cn.e3mall.pojo;
 import java.io.Serializable;
 
 /**
- * @author 田祚
+ * @program: e3
+ * @description: EasyUITreeNode返回格式
+ * @author: Mr.Tian
+ * @Company: www.stxkfzx.com
+ * @Time: 2018/8/10
  */
 public class EasyUITreeNode implements Serializable {
+    private static final long serialVersionUID = 4558287260317863478L;
     private Long id;
     private String text;
     private String state;

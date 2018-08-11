@@ -4,26 +4,26 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author 田祚
  *
  */
 public class EasyUIDataGridResult implements Serializable {
-    private Long total;
-    private List rows;
+	private static final long serialVersionUID = -3726397466515203504L;
+	private Long total;
+	private List rows;
 
-    public Long getTotal() {
-        return total;
-    }
+	public Long getTotal() {
+		return total;
+	}
 
-    public void setTotal(Long total) {
-        this.total = total;
-    }
+	public void setTotal(Long total) {
+		this.total = total;
+	}
 
-    public List getRows() {
-        return rows;
-    }
+	public List getRows() {
+		return rows;
+	}
 
-    public void setRows(List rows) {
-        this.rows = rows;
-    }
+	public void setRows(List rows) {
+		this.rows = rows;
+	}
 }

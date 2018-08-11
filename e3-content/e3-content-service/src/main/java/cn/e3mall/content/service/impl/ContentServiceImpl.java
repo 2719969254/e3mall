@@ -17,9 +17,9 @@ import java.util.List;
 /**
  * @program: e3
  * @description: 内容管理Service
- * @author:Mr.Tian
+ * @author: Mr.Tian
  * @Company: www.stxkfzx.com
- * @Time: 2018/8/11    11:28
+ * @Time: 2018/8/11
  */
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -70,5 +70,15 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public TbContent selectByIdContent(Long id) {
 		return contentMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public List<TbContent> getContentListByCid(Long cid) {
+		TbContentExample example = new TbContentExample();
+		TbContentExample.Criteria criteria = example.createCriteria();
+		//添加查询条件
+		criteria.andCategoryIdEqualTo(cid);
+		//执行查询并返回
+		return contentMapper.selectByExampleWithBLOBs(example);
 	}
 }

@@ -12,18 +12,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @author 27199
+ * @program: e3
+ * @description:
+ * @author: Mr.Tian
+ * @Company: www.stxkfzx.com
+ * @Time: 2018/8/10
  */
 @Controller
 public class ItemCatController {
 
-    @Autowired
-    private ItemCatService itemCatService;
+	@Autowired
+	private ItemCatService itemCatService;
 
-    @RequestMapping("/item/cat/list")
-    @ResponseBody
-    public List<EasyUITreeNode> getItemCatList(@RequestParam(name = "id",defaultValue = "0") Long parentId){
-        List<EasyUITreeNode> itemCatList = itemCatService.getItemCatList(parentId);
-        return itemCatList;
-    }
+	@RequestMapping("/item/cat/list")
+	@ResponseBody
+	public List<EasyUITreeNode> getItemCatList(@RequestParam(name = "id", defaultValue = "0") Long parentId) {
+		return itemCatService.getItemCatList(parentId);
+	}
 }

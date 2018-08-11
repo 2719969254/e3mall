@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @program: e3
  * @description: 内容管理Controller
- * @author:Mr.Tian
+ * @author: Mr.Tian
  * @Company: www.stxkfzx.com
- * @Time: 2018/8/11    11:31
+ * @Time: 2018/8/11
  */
 @Controller
 public class ContentController {
@@ -72,4 +72,5 @@ public class ContentController {
 	public TbContent selectContent(@PathVariable Long id) {
 		return contentService.selectByIdContent(id);
 	}
+
 }

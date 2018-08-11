@@ -5,14 +5,18 @@ import cn.e3mall.pojo.EasyUITreeNode;
 import java.util.List;
 
 /**
- * @author 田祚
+ * @program: e3
+ * @description: 显示商品分类
+ * @author: Mr.Tian
+ * @Company: www.stxkfzx.com
+ * @Time: 2018/8/10
  */
 public interface ItemCatService {
     /**
      * 显示所有分类
      *
-     * @param parentId
-     * @return
+     * @param parentId 父节点id
+     * @return List<EasyUITreeNode>
      */
     List<EasyUITreeNode> getItemCatList(Long parentId);
 }
