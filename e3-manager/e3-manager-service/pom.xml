@@ -6,7 +6,7 @@
         <artifactId>e3-manager</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-	<packaging>war</packaging>
+    <packaging>war</packaging>
     <artifactId>e3-manager-service</artifactId>
     <dependencies>
         <dependency>
@@ -76,6 +76,12 @@
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
+        </dependency>
+
+        <!-- Redis客户端 -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
     </dependencies>
 </project>

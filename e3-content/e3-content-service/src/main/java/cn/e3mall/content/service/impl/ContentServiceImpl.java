@@ -1,14 +1,18 @@
 package cn.e3mall.content.service.impl;
 
+import cn.e3mall.common.jedis.JedisClient;
 import cn.e3mall.content.service.ContentService;
 import cn.e3mall.mapper.TbContentMapper;
 import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbContent;
 import cn.e3mall.pojo.TbContentExample;
 import cn.e3mall.utils.E3Result;
+import cn.e3mall.utils.JsonUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -25,6 +29,11 @@ import java.util.List;
 public class ContentServiceImpl implements ContentService {
 	@Autowired
 	private TbContentMapper contentMapper;
+	@Autowired
+	private JedisClient jedisClient;
+
+	@Value("${CONTENT_LIST}")
+	private String CONTENT_LIST;
 
 	@Override
 	public EasyUIDataGridResult getItemList(Long categoryId, Integer page, Integer rows) {
@@ -55,6 +64,8 @@ public class ContentServiceImpl implements ContentService {
 		content.setUpdated(new Date());
 		//插入数据库
 		contentMapper.insert(content);
+		//缓存同步,删除缓存中对应的数据。
+		jedisClient.hdel(CONTENT_LIST, content.getCategoryId().toString());
 		return E3Result.ok();
 	}
 
@@ -64,6 +75,8 @@ public class ContentServiceImpl implements ContentService {
 		content.setUpdated(new Date());
 		//执行修改
 		contentMapper.updateByPrimaryKey(content);
+		//缓存同步,删除缓存中对应的数据。
+		jedisClient.hdel(CONTENT_LIST, content.getCategoryId().toString());
 		return E3Result.ok();
 	}
 
@@ -74,11 +87,42 @@ public class ContentServiceImpl implements ContentService {
 
 	@Override
 	public List<TbContent> getContentListByCid(Long cid) {
+		//查询缓存
+		try{
+			//如果缓存中有直接响应结果
+			String json = jedisClient.hget(CONTENT_LIST, cid + "");
+			if (StringUtils.isNotBlank(json)) {
+				System.out.println("此时有缓存");
+				return JsonUtils.jsonToList(json, TbContent.class);
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 		TbContentExample example = new TbContentExample();
 		TbContentExample.Criteria criteria = example.createCriteria();
 		//添加查询条件
 		criteria.andCategoryIdEqualTo(cid);
 		//执行查询并返回
-		return contentMapper.selectByExampleWithBLOBs(example);
+		List<TbContent> tbContents = contentMapper.selectByExampleWithBLOBs(example);
+		//添加缓存
+		try{
+			jedisClient.hset(CONTENT_LIST, cid + "", JsonUtils.objectToJson(tbContents));
+			System.out.println("此时添加缓存");
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return tbContents;
+	}
+
+	@Override
+	public E3Result deleteBatchContent(String[] ids) {
+		for (String id  :ids) {
+			//执行删除操作
+			contentMapper.deleteByPrimaryKey(Long.valueOf(id));
+			TbContent content = contentMapper.selectByPrimaryKey((long) Integer.parseInt(id));
+			//缓存同步,删除缓存中对应的数据。
+			jedisClient.hdel(CONTENT_LIST, content.getCategoryId().toString());
+		}
+		return E3Result.ok();
 	}
 }

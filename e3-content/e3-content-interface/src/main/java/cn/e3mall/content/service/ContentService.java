@@ -52,4 +52,11 @@ public interface ContentService {
 	 * @return List<TbContent>
 	 */
 	List<TbContent> getContentListByCid(Long cid);
+
+	/**
+	 * 批量删除选中删除内容
+	 * @param ids 选中内容列表
+	 * @return E3Result
+	 */
+	E3Result deleteBatchContent(String[] ids);
 }
