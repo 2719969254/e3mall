@@ -32,11 +32,11 @@ public interface ContentCategoryService {
 
 	/**
 	 * 修改分类节点
-	 * @param parentId 父节点id
+	 * @param id 节点id
 	 * @param name 修改后名称
 	 * @return E3Result
 	 */
-	E3Result editContentCategory(Long parentId,String name);
+	E3Result editContentCategory(Long id,String name);
 
 	/**
 	 * 删除节点

@@ -77,9 +77,9 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
-	public E3Result editContentCategory(Long parentId, String name) {
+	public E3Result editContentCategory(Long id, String name) {
 		//查询节点内容
-		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(parentId);
+		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
 		//设置修改名称
 		contentCategory.setName(name);
 		//修改数据库

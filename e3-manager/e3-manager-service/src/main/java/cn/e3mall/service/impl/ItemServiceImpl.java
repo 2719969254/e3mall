@@ -116,7 +116,7 @@ public class ItemServiceImpl implements ItemService {
 		//判断ids不为空
 		if (StringUtils.isNoneBlank(ids)) {
 			String[] split = ids.split(",");
-			//遍历成一个个的id进行修改下架
+			//遍历所有id,进行修改下架
 			for (String id : split) {
 				TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
 				item.setStatus((byte) 1);
@@ -133,7 +133,7 @@ public class ItemServiceImpl implements ItemService {
 		//判断ids不为空
 		if (StringUtils.isNoneBlank(ids)) {
 			String[] split = ids.split(",");
-			//遍历成一个个的id进行修改下架
+			//遍历所有id进行修改下架
 			for (String id : split) {
 				TbItem item = itemMapper.selectByPrimaryKey(Long.valueOf(id));
 				item.setStatus((byte) 2);
