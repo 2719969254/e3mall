@@ -1,10 +1,14 @@
 package cn.e3mall.common.jedis;
 
-import java.util.List;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+import java.util.List;
+
+/**
+ * jedis对象池实现jedis相关方法
+ * @author MR.Tian
+ */
 public class JedisClientPool implements JedisClient {
 	
 	private JedisPool jedisPool;

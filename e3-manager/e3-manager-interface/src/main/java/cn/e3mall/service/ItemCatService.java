@@ -8,8 +8,8 @@ import java.util.List;
  * @program: e3
  * @description: 显示商品分类
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/10
+ * @version 1.0
+ * @date 2018/8/10
  */
 public interface ItemCatService {
     /**

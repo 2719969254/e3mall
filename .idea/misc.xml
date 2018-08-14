@@ -6,12 +6,15 @@
     <file type="web" url="file://$PROJECT_DIR$/e3-manager/e3-manager-service" />
     <file type="web" url="file://$PROJECT_DIR$/e3-manager/e3-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/e3-portal-web" />
+    <file type="web" url="file://$PROJECT_DIR$/e3-search" />
+    <file type="web" url="file://$PROJECT_DIR$/e3-search-web" />
+    <type id="Spring" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/e3mall" />
     <option name="OPTION_SCOPE" value="private" />
     <option name="OTHER_OPTIONS" value="-encoding utf-8 -charset utf-8" />
   </component>
@@ -24,8 +27,19 @@
         <option value="$PROJECT_DIR$/e3-manager-web/pom.xml" />
         <option value="$PROJECT_DIR$/e3-portal-web/pom.xml" />
         <option value="$PROJECT_DIR$/e3-content/pom.xml" />
+        <option value="$PROJECT_DIR$/e3-search/pom.xml" />
+        <option value="$PROJECT_DIR$/e3-search/e3-search-service/pom.xml" />
+        <option value="$PROJECT_DIR$/e3-search/e3-search-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/e3-search-web/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="e3-search-interface" />
+      </set>
+    </option>
+  </component>
 </project>

@@ -1,7 +1,7 @@
 package cn.e3mall.content.service;
 
 import cn.e3mall.pojo.EasyUITreeNode;
-import cn.e3mall.utils.E3Result;
+import cn.e3mall.common.utils.E3Result;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * @description: 内容分类管理
  * @author:Mr.Tian
  * @Company： www.stxkfzx.com
- * @Time: 2018/8/10
+ * @date 2018/8/10
  */
 public interface ContentCategoryService {
 	/**

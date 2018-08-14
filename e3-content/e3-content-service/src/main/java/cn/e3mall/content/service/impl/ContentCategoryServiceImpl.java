@@ -5,7 +5,7 @@ import cn.e3mall.mapper.TbContentCategoryMapper;
 import cn.e3mall.pojo.EasyUITreeNode;
 import cn.e3mall.pojo.TbContentCategory;
 import cn.e3mall.pojo.TbContentCategoryExample;
-import cn.e3mall.utils.E3Result;
+import cn.e3mall.common.utils.E3Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +17,8 @@ import java.util.List;
  * @program: e3
  * @description: 内容分类管理Service
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/10
+ * @version 1.0
+ * @date 2018/8/10
  */
 @Service
 public class ContentCategoryServiceImpl implements ContentCategoryService {

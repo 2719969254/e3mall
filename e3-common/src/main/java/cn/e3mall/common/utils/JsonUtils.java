@@ -1,4 +1,4 @@
-package cn.e3mall.utils;
+package cn.e3mall.common.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
@@ -10,7 +10,7 @@ import java.util.List;
  * @program: e3
  * @description: 淘淘商城自定义响应结构
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
+ * @version 1.0
  * @Date: 2018/8/9
  */
 public class JsonUtils {

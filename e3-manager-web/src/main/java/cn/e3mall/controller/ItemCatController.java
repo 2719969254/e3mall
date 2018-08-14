@@ -3,7 +3,6 @@ package cn.e3mall.controller;
 import cn.e3mall.pojo.EasyUITreeNode;
 import cn.e3mall.service.ItemCatService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +14,8 @@ import java.util.List;
  * @program: e3
  * @description:
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/10
+ * @version 1.0
+ * @date 2018/8/10
  */
 @Controller
 public class ItemCatController {

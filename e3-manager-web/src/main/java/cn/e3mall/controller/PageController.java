@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @program: e3
  * @description: 显示后台首页
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/8
+ * @version 1.0
+ * @date 2018/8/8
  */
 @Controller
 public class PageController {

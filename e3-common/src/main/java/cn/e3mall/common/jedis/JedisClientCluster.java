@@ -1,13 +1,18 @@
 package cn.e3mall.common.jedis;
 
-import java.util.List;
-
 import redis.clients.jedis.JedisCluster;
 
+import java.util.List;
+
+/**
+ * jedis集群常用方法实现
+ *
+ * @author MR.Tian
+ */
 public class JedisClientCluster implements JedisClient {
-	
+
 	private JedisCluster jedisCluster;
-	
+
 
 	public JedisCluster getJedisCluster() {
 		return jedisCluster;

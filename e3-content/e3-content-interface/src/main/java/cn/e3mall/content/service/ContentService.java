@@ -2,7 +2,7 @@ package cn.e3mall.content.service;
 
 import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbContent;
-import cn.e3mall.utils.E3Result;
+import cn.e3mall.common.utils.E3Result;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import java.util.List;
  * @program: e3
  * @description: 内容管理接口
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/11
+ * @version 1.0
+ * @date 2018/8/11
  */
 public interface ContentService {
 	/**

@@ -1,4 +1,4 @@
-package cn.e3mall.utils;
+package cn.e3mall.common.utils;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import java.util.Random;
  * @program: e3
  * @description: 各种id生成策略
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
+ * @version 1.0
  * @Date: 2018/8/9
  */
 public class IDUtils {

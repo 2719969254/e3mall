@@ -3,14 +3,14 @@ package cn.e3mall.service;
 import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.pojo.TbItemDesc;
-import cn.e3mall.utils.E3Result;
+import cn.e3mall.common.utils.E3Result;
 
 /**
  * @program: e3
  * @description: 商品Service
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/9
+ * @version 1.0
+ * @date 2018/8/9
  */
 public interface ItemService {
     /**

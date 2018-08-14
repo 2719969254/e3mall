@@ -1,7 +1,7 @@
 package cn.e3mall.controller;
 
 import cn.e3mall.pojo.EasyUITreeNode;
-import cn.e3mall.utils.E3Result;
+import cn.e3mall.common.utils.E3Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import cn.e3mall.content.service.ContentCategoryService;
@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @program: e3
- * @description: 内容分类管理Controller
+ * @version 1.0
+ * 内容分类管理Controller
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/10
+ * @date 2018/8/10
  */
 @Controller
 public class ContentCatController {

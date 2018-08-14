@@ -1,4 +1,4 @@
-package cn.e3mall.utils;
+package cn.e3mall.common.utils;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,11 +7,11 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @program: e3
- * @description: 定义多种返回状态
+ * 定义多种返回状态
+ *
+ * @version 1.0
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/10
+ * @date 2018/8/10
  */
 public class E3Result implements Serializable {
 

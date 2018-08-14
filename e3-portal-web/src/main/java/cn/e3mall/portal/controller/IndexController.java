@@ -15,7 +15,7 @@ import java.util.List;
  * @description: 展示首页
  * @author: Mr.Tian
  * @Company： www.stxkfzx.com
- * @Time: 2018/8/10
+ * @date 2018/8/10
  */
 @Controller
 public class IndexController {

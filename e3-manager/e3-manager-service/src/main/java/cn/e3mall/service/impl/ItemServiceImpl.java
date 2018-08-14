@@ -7,8 +7,8 @@ import cn.e3mall.pojo.TbItem;
 import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.pojo.TbItemExample;
 import cn.e3mall.service.ItemService;
-import cn.e3mall.utils.E3Result;
-import cn.e3mall.utils.IDUtils;
+import cn.e3mall.common.utils.E3Result;
+import cn.e3mall.common.utils.IDUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -23,8 +23,8 @@ import java.util.List;
  * @program: e3
  * @description: 商品Service实现
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/9
+ * @version 1.0
+ * @date 2018/8/9
  */
 @Service
 public class ItemServiceImpl implements ItemService {

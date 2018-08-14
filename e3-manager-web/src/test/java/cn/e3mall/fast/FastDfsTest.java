@@ -1,6 +1,6 @@
 package cn.e3mall.fast;
 
-import cn.e3mall.utils.FastDFSClient;
+import cn.e3mall.common.utils.FastDFSClient;
 import org.csource.fastdfs.*;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * @description: 测试图片上传
  * @author:Mr.Tian
  * @Date:2018/8/9
- * @Time:20:25
+ * @date20:25
  */
 public class FastDfsTest {
     @Test

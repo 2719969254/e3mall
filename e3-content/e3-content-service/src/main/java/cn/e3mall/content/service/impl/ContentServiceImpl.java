@@ -6,8 +6,8 @@ import cn.e3mall.mapper.TbContentMapper;
 import cn.e3mall.pojo.EasyUIDataGridResult;
 import cn.e3mall.pojo.TbContent;
 import cn.e3mall.pojo.TbContentExample;
-import cn.e3mall.utils.E3Result;
-import cn.e3mall.utils.JsonUtils;
+import cn.e3mall.common.utils.E3Result;
+import cn.e3mall.common.utils.JsonUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -22,8 +22,8 @@ import java.util.List;
  * @program: e3
  * @description: 内容管理Service
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/11
+ * @version 1.0
+ * @date 2018/8/11
  */
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -119,8 +119,9 @@ public class ContentServiceImpl implements ContentService {
 		for (String id  :ids) {
 			//执行删除操作
 			contentMapper.deleteByPrimaryKey(Long.valueOf(id));
-			TbContent content = contentMapper.selectByPrimaryKey((long) Integer.parseInt(id));
+			TbContent content = contentMapper.selectByPrimaryKey(Long.valueOf(id));
 			//缓存同步,删除缓存中对应的数据。
+			System.out.println("content = " + content.getTitle());
 			jedisClient.hdel(CONTENT_LIST, content.getCategoryId().toString());
 		}
 		return E3Result.ok();

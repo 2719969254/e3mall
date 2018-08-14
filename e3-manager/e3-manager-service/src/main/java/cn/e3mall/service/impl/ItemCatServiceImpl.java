@@ -15,8 +15,8 @@ import java.util.List;
  * @program: e3
  * @description: 商品Service实现
  * @author: Mr.Tian
- * @Company: www.stxkfzx.com
- * @Time: 2018/8/9
+ * @version 1.0
+ * @date 2018/8/9
  */
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
