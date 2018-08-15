@@ -1,11 +1,11 @@
 package cn.e3mall.search.service.impl;
 
 
-import cn.e3mall.pojo.SearchItem;
 import cn.e3mall.common.utils.E3Result;
+import cn.e3mall.pojo.SearchItem;
 import cn.e3mall.search.mapper.ItemMapper;
 import cn.e3mall.search.service.SearchItemService;
-import org.apache.solr.client.solrj.SolrServer;
+import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,11 +21,18 @@ import java.util.List;
 public class SearchItemServiceImpl implements SearchItemService {
 	@Autowired
 	private ItemMapper itemMapper;
-	@Autowired
-	private SolrServer solrServer;
+/*	@Autowired
+	private SolrClient solrServer;*/
 
 	@Override
 	public E3Result importAllItems() {
+		//根据query查询索引库
+		String solrUrl = "http://192.168.25.132:8180/solr/collection2";
+		//创建solrClient同时指定超时时间，不指定走默认配置
+		HttpSolrClient solrServer = new HttpSolrClient.Builder(solrUrl)
+				.withConnectionTimeout(10000)
+				.withSocketTimeout(60000)
+				.build();
 		try {
 			//查询商品列表
 			List<SearchItem> itemList = itemMapper.getItemList();
