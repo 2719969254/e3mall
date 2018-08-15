@@ -3,8 +3,14 @@ package cn.e3mall.pojo;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
+ */
 public class SearchResult implements Serializable {
 
+	private static final long serialVersionUID = 5975090274695066182L;
 	private long recordCount;
 	private int totalPages;
 	private List<SearchItem> itemList;

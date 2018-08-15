@@ -16,7 +16,7 @@
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop/e3mall" />
     <option name="OPTION_SCOPE" value="private" />
-    <option name="OTHER_OPTIONS" value="-encoding utf-8 -charset utf-8" />
+    <option name="OTHER_OPTIONS" value="-encoding utf-8 -charset utf-8 -tag date:a:”date”" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

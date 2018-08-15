@@ -19,11 +19,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @program: e3
- * @description: 内容管理Service
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/11
+ * 内容管理实现
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
  */
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -38,7 +38,7 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public EasyUIDataGridResult getItemList(Long categoryId, Integer page, Integer rows) {
 		//设置分页信息
-		PageHelper.startPage(page,rows);
+		PageHelper.startPage(page, rows);
 		//创建查询条件
 		TbContentExample example = new TbContentExample();
 		TbContentExample.Criteria criteria = example.createCriteria();
@@ -88,14 +88,14 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public List<TbContent> getContentListByCid(Long cid) {
 		//查询缓存
-		try{
+		try {
 			//如果缓存中有直接响应结果
 			String json = jedisClient.hget(CONTENT_LIST, cid + "");
 			if (StringUtils.isNotBlank(json)) {
 				System.out.println("此时有缓存");
 				return JsonUtils.jsonToList(json, TbContent.class);
 			}
-		}catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		TbContentExample example = new TbContentExample();
@@ -105,10 +105,10 @@ public class ContentServiceImpl implements ContentService {
 		//执行查询并返回
 		List<TbContent> tbContents = contentMapper.selectByExampleWithBLOBs(example);
 		//添加缓存
-		try{
+		try {
 			jedisClient.hset(CONTENT_LIST, cid + "", JsonUtils.objectToJson(tbContents));
 			System.out.println("此时添加缓存");
-		}catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return tbContents;
@@ -116,7 +116,7 @@ public class ContentServiceImpl implements ContentService {
 
 	@Override
 	public E3Result deleteBatchContent(String[] ids) {
-		for (String id  :ids) {
+		for (String id : ids) {
 			//执行删除操作
 			contentMapper.deleteByPrimaryKey(Long.valueOf(id));
 			TbContent content = contentMapper.selectByPrimaryKey(Long.valueOf(id));

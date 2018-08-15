@@ -9,9 +9,9 @@ import java.util.List;
 /**
  * 定义多种返回状态
  *
- * @version 1.0
- * @author: Mr.Tian
- * @date 2018/8/10
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 public class E3Result implements Serializable {
 

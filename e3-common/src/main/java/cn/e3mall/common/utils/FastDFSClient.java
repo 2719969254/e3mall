@@ -7,13 +7,12 @@ import org.csource.fastdfs.StorageServer;
 import org.csource.fastdfs.TrackerClient;
 import org.csource.fastdfs.TrackerServer;
 
-
 /**
- * @program: e3
- * @description: 图片上传工具类
- * @author: Mr.Tian
- * @version 1.0
- * @Date: 2018/8/9
+ * 图片上传工具类
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
  */
 public class FastDFSClient {
 

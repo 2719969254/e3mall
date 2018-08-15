@@ -3,10 +3,11 @@ package cn.e3mall.pojo;
 import java.io.Serializable;
 
 /**
- * @version 1.0
- * @description: EasyUITreeNode返回格式
- * @author: Mr.Tian
- * @date 2018/8/10
+ * EasyUITreeNode返回格式
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
  */
 public class EasyUITreeNode implements Serializable {
 	private static final long serialVersionUID = 4558287260317863478L;

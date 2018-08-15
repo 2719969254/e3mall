@@ -2,15 +2,15 @@ package cn.e3mall.common.jedis;
 
 import java.util.List;
 
-
 /**
- * @descriptionjedis 集群的常用方法接口
+ * 集群的常用方法接口
  *
- * @author MR.Tian
- * @version 1.0
- * @date 2018/8/12
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/15
  */
 public interface JedisClient {
+	// TODO: 2018/8/15 补全下面方法doc注释
 
 	String set(String key, String value);
 

@@ -6,11 +6,11 @@ import cn.e3mall.common.utils.E3Result;
 import java.util.List;
 
 /**
- * @program: e3
- * @description: 内容分类管理
- * @author:Mr.Tian
- * @Company： www.stxkfzx.com
- * @date 2018/8/10
+ * 内容分类管理
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
  */
 public interface ContentCategoryService {
 	/**
@@ -32,14 +32,16 @@ public interface ContentCategoryService {
 
 	/**
 	 * 修改分类节点
-	 * @param id 节点id
+	 *
+	 * @param id   节点id
 	 * @param name 修改后名称
 	 * @return E3Result
 	 */
-	E3Result editContentCategory(Long id,String name);
+	E3Result editContentCategory(Long id, String name);
 
 	/**
 	 * 删除节点
+	 *
 	 * @param id 要删除节点id
 	 * @return E3Result
 	 */

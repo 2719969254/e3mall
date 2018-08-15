@@ -3,11 +3,11 @@ package cn.e3mall.common.utils;
 import java.util.Random;
 
 /**
- * @program: e3
- * @description: 各种id生成策略
- * @author: Mr.Tian
- * @version 1.0
- * @Date: 2018/8/9
+ * 多种id及名称生成策略
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/9
  */
 public class IDUtils {
 
@@ -23,10 +23,10 @@ public class IDUtils {
 		int end3 = random.nextInt(999);
 		//如果不足三位前面补0
 		String str = millis + String.format("%03d", end3);
-		
+
 		return str;
 	}
-	
+
 	/**
 	 * 商品id生成
 	 */
@@ -42,9 +42,9 @@ public class IDUtils {
 		long id = new Long(str);
 		return id;
 	}
-	
+
 	public static void main(String[] args) {
-		for(int i=0;i< 100;i++){
+		for (int i = 0; i < 100; i++) {
 			System.out.println(genItemId());
 		}
 	}

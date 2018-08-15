@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * jedis集群常用方法实现
  *
- * @author MR.Tian
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/15
  */
 public class JedisClientCluster implements JedisClient {
 

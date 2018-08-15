@@ -7,10 +7,13 @@ import java.util.List;
 
 /**
  * jedis对象池实现jedis相关方法
- * @author MR.Tian
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/15
  */
 public class JedisClientPool implements JedisClient {
-	
+
 	private JedisPool jedisPool;
 
 	public JedisPool getJedisPool() {
