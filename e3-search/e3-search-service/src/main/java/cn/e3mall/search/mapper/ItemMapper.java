@@ -7,14 +7,17 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author MR.Tian
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/14
  */
 @Repository
 public interface ItemMapper {
 
 	/**
-	 * 哈哈
-	 * @return
+	 * 符合要求商品项
+	 *
+	 * @return List<SearchItem>
 	 */
 	List<SearchItem> getItemList();
 }

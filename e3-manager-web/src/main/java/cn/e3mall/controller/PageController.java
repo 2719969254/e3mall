@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @program: e3
- * @description: 显示后台首页
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/8
+ * 显示后台首页
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Controller
 public class PageController {

@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * @version 1.0
  * 内容分类管理Controller
- * @author: Mr.Tian
- * @date 2018/8/10
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Controller
 public class ContentCatController {

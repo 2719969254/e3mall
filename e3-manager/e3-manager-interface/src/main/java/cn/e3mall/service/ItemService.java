@@ -6,67 +6,71 @@ import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.common.utils.E3Result;
 
 /**
- * @program: e3
- * @description: 商品Service
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/9
+ * 商品管理接口
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 public interface ItemService {
-    /**
-     * 查询商品项
-     *
-     * @param itemId 商品订单
-     * @return TbItem
-     */
-    TbItem getItemById(long itemId);
 
-    /**
-     * 分页
-     *
-     * @param page 总页数
-     * @param rows 行数
-     * @return EasyUIDataGridResult
-     */
-    EasyUIDataGridResult getItemList(int page, int rows);
+	/**
+	 * 查询商品项
+	 *
+	 * @param itemId 商品订单
+	 * @return TbItem
+	 */
+	TbItem getItemById(long itemId);
 
-    /**
-     * 添加商品接口
-     *
-     * @param tbItem 商品项
-     * @param desc   商品描述
-     * @return E3Result
-     */
-    E3Result addItem(TbItem tbItem, String desc);
+	/**
+	 * 分页
+	 *
+	 * @param page 总页数
+	 * @param rows 行数
+	 * @return EasyUIDataGridResult
+	 */
+	EasyUIDataGridResult getItemList(int page, int rows);
 
-    /**
-     * 查询商品描述信息
-     *
-     * @param id 商品id
-     * @return tbItem
-     */
-    TbItemDesc getItemDescById(long id);
+	/**
+	 * 添加商品接口
+	 *
+	 * @param tbItem 商品项
+	 * @param desc   商品描述
+	 * @return E3Result
+	 */
+	E3Result addItem(TbItem tbItem, String desc);
 
-    /**
-     * 批量删除商品
-     * @param ids 批量商品id
-     * @return E3Result
-     */
-    E3Result deleteItems(String ids);
+	/**
+	 * 查询商品描述信息
+	 *
+	 * @param id 商品id
+	 * @return tbItem
+	 */
+	TbItemDesc getItemDescById(long id);
 
-    /**
-     * 批量上架产品
-     * @param ids 批量商品id
-     * @return E3Result
-     */
-    E3Result groundingItem(String ids);
+	/**
+	 * 批量删除商品
+	 *
+	 * @param ids 批量商品id
+	 * @return E3Result
+	 */
+	E3Result deleteItems(String ids);
 
-    /**
-     * 批量下架产品
-     * @param ids 批量商品id
-     * @return E3Result
-     */
-    E3Result soldOutItem(String ids);
+	/**
+	 * 批量上架产品
+	 *
+	 * @param ids 批量商品id
+	 * @return E3Result
+	 */
+	E3Result groundingItem(String ids);
+
+	/**
+	 * 批量下架产品
+	 *
+	 * @param ids 批量商品id
+	 * @return E3Result
+	 */
+	E3Result soldOutItem(String ids);
 
 
 }

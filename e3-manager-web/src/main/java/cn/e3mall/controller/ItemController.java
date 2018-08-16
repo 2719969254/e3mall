@@ -12,13 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 /**
- * @program: e3
- * @description: 商品controller
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/10
+ * 商品Controller
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Controller
 public class ItemController {

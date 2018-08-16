@@ -17,24 +17,13 @@
         <!--每个route默认的连接数-->
         <property name="defaultMaxPerRoute" value="32"/>
     </bean>
-<!--    <bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
-        <constructor-arg name="builder" value="http://192.168.25.132:8180/solr/collection2"/>
-    </bean>-->
-
-    <!--<bean id="SolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
-        <constructor-arg index="0" value="http://192.168.25.132:2182,
-                                          http://192.168.25.132:2183,
-                                          http://192.168.25.132:2184,
-                                          http://192.168.25.132:2185"/>
-
-    </bean>-->
     <bean class="org.apache.solr.client.solrj.impl.CloudSolrClient.Builder" id="emptyBuilder"/>
     <bean factory-bean="emptyBuilder" factory-method="withZkHost" id="builder">
         <constructor-arg value="192.168.25.132:2182,
                                 192.168.25.132:2183,
                                 192.168.25.132:2184,
                                 192.168.25.132:2185"
-                                type="java.lang.String"/>
+                         type="java.lang.String"/>
     </bean>
     <bean factory-bean="builder" factory-method="build" id="solrClient">
         <property name="defaultCollection" value="collection2"/>

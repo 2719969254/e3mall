@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 内容管理Controller
- * @author: Mr.Tian
- * @date 2018/8/11
- * @version 1.0
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Controller
 public class ContentController {

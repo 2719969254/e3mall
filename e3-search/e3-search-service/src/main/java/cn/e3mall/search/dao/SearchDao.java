@@ -14,13 +14,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author MR.Tian
+ * 搜索Dao
+ *
+ * @author VicterTian
  * @version V1.0
  * @Date 2018/8/14
  */
 @Repository
 public class SearchDao {
-
 
 	public SearchResult search(SolrQuery query) throws Exception {
 		//根据query查询索引库

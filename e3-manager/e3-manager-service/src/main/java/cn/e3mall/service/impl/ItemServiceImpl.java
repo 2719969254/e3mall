@@ -18,13 +18,12 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-
 /**
- * @program: e3
- * @description: 商品Service实现
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/9
+ * 商品管理实现
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Service
 public class ItemServiceImpl implements ItemService {

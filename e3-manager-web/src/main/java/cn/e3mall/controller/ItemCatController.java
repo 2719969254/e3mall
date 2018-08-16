@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-
+// TODO: 2018/8/16 研究这个类的功能
 /**
- * @program: e3
- * @description:
- * @author: Mr.Tian
- * @version 1.0
- * @date 2018/8/10
+ * 
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/10
  */
 @Controller
 public class ItemCatController {

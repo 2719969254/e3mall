@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * @program: e3
- * @description: 展示首页
- * @author: Mr.Tian
- * @Company： www.stxkfzx.com
- * @date 2018/8/10
+ * 首页展示
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/14
  */
 @Controller
 public class IndexController {

@@ -8,11 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author MR.Tian
+ * 一键导入搜索索引
+ *
+ * @author VicterTian
+ * @version V1.0
+ * @Date 2018/8/14
  */
 @Controller
 public class SearchItemController {
-	
+
 	@Autowired
 	private SearchItemService searchItemService;
 
@@ -21,6 +25,6 @@ public class SearchItemController {
 	public E3Result importItemList() {
 		E3Result e3Result = searchItemService.importAllItems();
 		return e3Result;
-		
+
 	}
 }
