@@ -20,4 +20,10 @@ public interface ItemMapper {
 	 * @return List<SearchItem>
 	 */
 	List<SearchItem> getItemList();
+
+	/**
+	 * @param itemId
+	 * @return
+	 */
+	SearchItem getItemById(long itemId);
 }
