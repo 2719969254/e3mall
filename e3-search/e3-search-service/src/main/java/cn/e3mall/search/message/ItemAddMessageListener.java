@@ -12,11 +12,11 @@ import javax.jms.TextMessage;
 
 /**
  * 监听商品添加消息，接收消息后，将对应的商品信息同步到索引库
- * <p>Title: ItemAddMessageListener</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
+ * @author VicterTian
  * @version 1.0
+ * @date 2018/8/16
  */
+
 public class ItemAddMessageListener implements MessageListener {
 	
 	@Autowired

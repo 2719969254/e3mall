@@ -73,4 +73,6 @@ public class ContentCatController {
 	public E3Result deleteContentCategory(Long id) {
 		return contentCategoryService.deleteContentCategory(id);
 	}
+
+
 }

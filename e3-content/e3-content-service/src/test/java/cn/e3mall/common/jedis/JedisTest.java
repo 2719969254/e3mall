@@ -7,7 +7,7 @@ import redis.clients.jedis.JedisPool;
 /**
  * @program: e3
  * @description: jedis测试
- * @author: Mr.Tian
+ * @author: VicterTian
  * @version 1.0
  * @date 2018/8/12
  */
