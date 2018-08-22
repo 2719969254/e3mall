@@ -1,6 +1,7 @@
 package cn.e3mall.cart.controller;
 
 import cn.e3mall.common.utils.CookieUtils;
+import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.common.utils.JsonUtils;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +34,8 @@ public class CartController {
 	private Integer COOKIE_CART_EXPIRE;
 
 	/**
+	 * 添加商品到购物车
+	 *
 	 * @param itemId
 	 * @param num
 	 * @param request
@@ -85,5 +89,41 @@ public class CartController {
 		}
 		//如果不为空则返回带数据的list集合
 		return JsonUtils.jsonToList(json, TbItem.class);
+	}
+
+	/**
+	 * 展示购物车
+	 *
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/cart/cart")
+	public String showCatList(HttpServletRequest request, HttpServletResponse response) {
+		//从cookie中取购物车列表
+		List<TbItem> cartList = getCartListFromCookie(request);
+		//把列表传递给页面
+		request.setAttribute("cartList", cartList);
+		//返回逻辑视图
+		return "cart";
+	}
+	@RequestMapping("/cart/update/num/{itemId}/{num}")
+	@ResponseBody
+	public E3Result updateCartNum(@PathVariable Long itemId, @PathVariable Integer num,
+	                              HttpServletRequest request , HttpServletResponse response) {
+		//从cookie中获取购物车
+		List<TbItem> cartList = getCartListFromCookie(request);
+		//遍历商品列表找到对应商品
+		for (TbItem tbItem : cartList) {
+			if (tbItem.getId().longValue() == itemId.longValue()){
+				//更新数量
+				tbItem.setNum(num);
+				break;
+			}
+		}
+		//把购物车列表回写到cookie中
+		CookieUtils.setCookie(request, response, "cart", JsonUtils.objectToJson(cartList), COOKIE_CART_EXPIRE, true);
+		//返回成功
+		return E3Result.ok();
 	}
 }

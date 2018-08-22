@@ -1071,3 +1071,7 @@ Looking for @ControllerAdvice: WebApplicationContext for namespace 'e3-search-we
 
 [INFO ] 2018-08-22 09:55:42,334 method:org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:508)
 FrameworkServlet 'e3-search-web': initialization completed in 11249 ms
+
+
+[INFO ] 2018-08-22 17:08:52,950 method:com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol$1.disconnected(DubboProtocol.java:130)
+ [DUBBO] disconected from /192.168.25.1:20882,url:dubbo://192.168.25.1:20882/cn.e3mall.search.service.SearchService?anyhost=true&application=e3-search-web&check=false&codec=dubbo&dubbo=2.5.3&heartbeat=60000&interface=cn.e3mall.search.service.SearchService&methods=search&pid=9160&revision=0.0.1-SNAPSHOT&side=consumer&timeout=600000&timestamp=1534902931921, dubbo version: 2.5.3, current host: 192.168.25.1
