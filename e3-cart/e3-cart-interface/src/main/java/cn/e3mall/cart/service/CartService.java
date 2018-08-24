@@ -58,4 +58,8 @@ public interface CartService {
 	 * @return
 	 */
 	E3Result deleteCartItem(long userId, long itemId);
+
+	// TODO: 2018/8/24  hhh
+
+	E3Result clearCartItem(long userId);
 }
