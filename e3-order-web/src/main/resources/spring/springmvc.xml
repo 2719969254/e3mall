@@ -20,12 +20,12 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	<!-- 配置拦截器 -->
-	<!--<mvc:interceptors>
+	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
 			<bean class="cn.e3mall.order.interceptor.LoginInterceptor"></bean>
 		</mvc:interceptor>
-	</mvc:interceptors>-->
+	</mvc:interceptors>
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="e3-order-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.25.132:2181"/>

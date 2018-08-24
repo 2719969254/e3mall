@@ -26,7 +26,7 @@ public class OrderController {
 		TbUser user = (TbUser) request.getAttribute("user");
 //		Long id = user.getId();
 		//获取用户购物车列表
-		List<TbItem> cartList = cartService.getCartList(1);
+		List<TbItem> cartList = cartService.getCartList(user.getId());
 		//根据用户id获取收货地址列表，取支付方式列表，先使用静态数据
 		//回写到页面
 		request.setAttribute("cartList",cartList);
